@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== CURSOR ===== -->
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- ===== NAV ===== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="spike">
+          <svg viewBox="0 0 18 18" fill="none">
+            <path d="M9 0v18M0 9h18M3.5 3.5l11 11M14.5 3.5l-11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        Jay
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#songs">Songs</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="icon sun">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          </span>
+          <span class="icon moon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-particles" id="heroParticles">
+      <canvas id="particleCanvas"></canvas>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-badge">IIT Madras · Data Science</span>
+        <h1>
+          Hey, I'm <span class="highlight">Jay</span>
+        </h1>
+        <p class="hero-sub" id="heroSub"></p>
+        <div class="hero-actions">
+          <a href="#skills" class="btn btn-primary">Explore My Work</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="photo-frame" id="photoFrame">
+          <img src="image.png" alt="Jay" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="section-label visible">About</p>
+          <h2 class="section-title visible">The short version</h2>
+          <p>
+            I'm a Data Science student at <strong>IIT Madras</strong>, passionate about machine learning, full-stack development, and building things that matter. My toolkit spans Python's data ecosystem- NumPy, Pandas, Matplotlib and modern web frameworks like Vue, Flask, and FastAPI.
+          </p>
+          <p>
+            I believe good data tells a story. Whether I'm training a model, designing an API, or crafting a UI, I aim for clarity, performance, and a bit of elegance.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Python</span>
+            <span class="tag">ML</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Vue</span>
+            <span class="tag">Flask</span>
+          </div>
+        </div>
+        <div class="about-stats" id="statsContainer">
+          <div class="stat-card">
+            <div class="stat-number" data-target="3">0</div>
+            <div class="stat-label">Years Coding</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="10">0</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number stat-text">IIT</div>
+            <div class="stat-label">Madras</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number stat-text">∞</div>
+            <div class="stat-label">Curiosity</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills">
+    <div class="section-inner">
+      <p class="section-label">Skills</p>
+      <h2 class="section-title">What I work with</h2>
+      <p class="section-desc">A curated set of tools and technologies I reach for daily.</p>
+      <div class="skills-grid" id="skillsGrid">
+        <div class="skill-card"><div class="skill-icon"><span class="skill-bar" style="width:90%"></span></div><h3>Python</h3><p>Core language for data science, scripting, and backend.</p></div>
+        <div class="skill-card"><div class="skill-icon"><span class="skill-bar" style="width:85%"></span></div><h3>Machine Learning</h3><p>Scikit-learn, regression, classification, clustering.</p></div>
+        <div class="skill-card"><div class="skill-icon"><span class="skill-bar" style="width:90%"></span></div><h3>NumPy &amp; Pandas</h3><p>Numerical computing and data manipulation.</p></div>
+        <div class="skill-card"><div class="skill-icon"><span class="skill-bar" style="width:80%"></span></div><h3>Matplotlib</h3><p>Publication-quality plots and dashboards.</p></div>
+        <div class="skill-card"><div class="skill-icon"><span class="skill-bar" style="width:85%"></span></div><h3>HTML / CSS / JS</h3><p>Responsive, aesthetic interfaces.</p></div>
+        <div class="skill-card"><div class="skill-icon"><span class="skill-bar" style="width:75%"></span></div><h3>Vue</h3><p>Reactive component-based frontend.</p></div>
+        <div class="skill-card"><div class="skill-icon"><span class="skill-bar" style="width:70%"></span></div><h3>Flask</h3><p>Lightweight Python backend and REST APIs.</p></div>
+        <div class="skill-card"><div class="skill-icon"><span class="skill-bar" style="width:80%"></span></div><h3>FastAPI</h3><p>Modern async Python backend with auto-docs.</p></div>
+        <div class="skill-card"><div class="skill-icon"><span class="skill-bar" style="width:70%"></span></div><h3>Databases</h3><p>SQLite, PostgreSQL data persistence.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SONGS ===== -->
+  <section id="songs">
+    <div class="section-inner">
+      <p class="section-label">Playlist</p>
+      <h2 class="section-title">Songs I'm into</h2>
+      <p class="section-desc">A few tracks that keep me company while I code. Click to play.</p>
+      <div class="songs-grid" id="songsGrid">
+        <div class="song-card" data-src="songs/Brain needs reboot.aac" data-title="Brain Needs Reboot" data-artist="Unknown">
+          <div class="song-number">1</div>
+          <div class="song-info">
+            <h3>Brain Needs Reboot</h3>
+            <p class="artist">Unknown</p>
+          </div>
+          <div class="song-play">▶</div>
+        </div>
+        <div class="song-card" data-src="songs/Hey aisha.aac.m4a" data-title="Hey Aisha" data-artist="Unknown">
+          <div class="song-number">2</div>
+          <div class="song-info">
+            <h3>Hey Aisha</h3>
+            <p class="artist">Unknown</p>
+          </div>
+          <div class="song-play">▶</div>
+        </div>
+        <div class="song-card" data-src="songs/hoke ruposh.mp3" data-title="Hoke Ruposh" data-artist="Unknown">
+          <div class="song-number">3</div>
+          <div class="song-info">
+            <h3>Hoke Ruposh</h3>
+            <p class="artist">Unknown</p>
+          </div>
+          <div class="song-play">▶</div>
+        </div>
+        <div class="song-card" data-src="songs/mehak.aac.m4a" data-title="Mehak" data-artist="Unknown">
+          <div class="song-number">4</div>
+          <div class="song-info">
+            <h3>Mehak</h3>
+            <p class="artist">Unknown</p>
+          </div>
+          <div class="song-play">▶</div>
+        </div>
+      </div>
+
+      <!-- ===== AUDIO PLAYER ===== -->
+      <div class="audio-player" id="audioPlayer">
+        <div class="player-visualizer">
+          <canvas id="visualizerCanvas" width="600" height="80"></canvas>
+        </div>
+        <div class="player-controls">
+          <button class="player-btn" id="playerPrev" title="Previous">⏮</button>
+          <button class="player-btn player-btn-play" id="playerPlay" title="Play/Pause">▶</button>
+          <button class="player-btn" id="playerNext" title="Next">⏭</button>
+          <div class="player-track-info" id="playerTrackInfo">No track selected</div>
+          <div class="player-progress" id="playerProgress">
+            <div class="player-progress-track" id="progressTrack">
+              <div class="player-progress-fill" id="progressFill"></div>
+            </div>
+            <span class="player-time" id="playerTime">0:00 / 0:00</span>
+          </div>
+          <button class="player-btn player-volume-btn" id="playerVolume" title="Mute">🔊</button>
+          <input type="range" class="player-volume-slider" id="volumeSlider" min="0" max="1" step="0.05" value="0.7" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">
+            <span class="spike" style="display:inline-block;width:16px;height:16px;vertical-align:middle;margin-right:6px;">
+              <svg viewBox="0 0 18 18" fill="none">
+                <path d="M9 0v18M0 9h18M3.5 3.5l11 11M14.5 3.5l-11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </span>
+            Jay
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#songs">Playlist</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="https://github.com" target="_blank">GitHub</a>
+          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+          <a href="mailto:jay@example.com">Email</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="#">Resume</a>
+          <a href="#">Projects</a>
+          <a href="#">Blog</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Jay</span>
+        <div class="footer-social">
+          <a href="https://github.com" target="_blank" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <audio id="audioElement" preload="metadata"></audio>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
