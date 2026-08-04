@@ -687,6 +687,16 @@
 
     const isDark = () => html.getAttribute('data-theme') === 'dark';
 
+    function themeColor(name) {
+      const v = getComputedStyle(html).getPropertyValue(name).trim();
+      return v || '#a58cf0';
+    }
+    function hexToRgba(hex, a) {
+      const m = hex.replace('#', '');
+      const n = parseInt(m.length === 3 ? m.split('').map(c => c + c).join('') : m, 16);
+      return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${a})`;
+    }
+
     function vizFrame() {
       requestAnimationFrame(vizFrame);
       if (!analyser) {
@@ -713,8 +723,8 @@
         const y = h - bh;
         const g = vctx.createLinearGradient(0, y, 0, h);
         const a = 0.35 + (val / 255) * 0.65;
-        g.addColorStop(0, `rgba(165, 140, 240, ${a})`);
-        g.addColorStop(1, `rgba(242, 166, 192, ${a * 0.55})`);
+        g.addColorStop(0, hexToRgba(themeColor('--lavender'), a));
+        g.addColorStop(1, hexToRgba(themeColor('--blush'), a * 0.55));
         vctx.fillStyle = g;
         vctx.beginPath();
         vctx.roundRect(x, y, bw, bh, [2, 2, 0, 0]);
